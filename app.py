@@ -30,13 +30,13 @@ if st.button("Predict Pollution Level"):
     pollution_enc = pollution_encoder.transform([pollution_type])[0]
 
     input_df = pd.DataFrame({
-        'city_enc': [city_enc],
-        'state_enc': [state_enc],
-        'pollution_enc': [pollution_enc],
-        'year': [year],
-        'month': [month],
-        'day': [day]
-    })
+    'city_enc': [city_enc],
+    'state_enc': [state_enc],
+    'pollutant_enc': [pollution_enc],  # FIXED NAME
+    'year': [year],
+    'month': [month],
+    'day': [day]
+})
 
     prediction = model.predict(input_df)
 
