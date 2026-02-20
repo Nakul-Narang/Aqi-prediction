@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import streamlit as st
 
+st.write("App is running")
 st.set_page_config(page_title="AQI Prediction App")
 
 st.title("🌫 Air Pollution Prediction System")
