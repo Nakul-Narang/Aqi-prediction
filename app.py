@@ -26,14 +26,14 @@ if st.button("Predict"):
     pollutant_enc = pollution_encoder.transform([pollution_type])[0]
 
     # Create DataFrame EXACTLY matching training
+
     input_df = pd.DataFrame({
-        'city_enc': [city_enc],
-        'state_enc': [state_enc],
-        'pollutant_enc': [pollutant_enc],
-        'year': [year],
-        'month': [month],
-        'day': [day]
-    })
+    'city_enc': [city_encoded],
+    'state_enc': [state_encoded],
+    'pollutant_enc': [pollution_encoded],
+    'year': [year],
+    'month': [month]
+})
 
     # Ensure correct column order
     input_df = input_df[['city_enc', 'state_enc', 'pollutant_enc', 'year', 'month', 'day']]
