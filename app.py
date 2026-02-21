@@ -22,17 +22,17 @@ if st.button("Predict"):
 
     # Encode values
     # Encode inputs
-city_enc = city_encoder.transform([city])[0]
-state_enc = state_encoder.transform([state])[0]
-pollutant_enc = pollution_level_encoder.transform([pollution_type])[0]
+      city_enc = city_encoder.transform([city])[0]
+      state_enc = state_encoder.transform([state])[0]
+      pollutant_enc = pollution_level_encoder.transform([pollution_type])[0]
 
 # Create dataframe EXACTLY like model expects
-input_df = pd.DataFrame({
-    'city_enc': [city_enc],
-    'state_enc': [state_enc],
-    'pollutant_enc': [pollutant_enc],
-    'year': [year],
-    'month': [month]
+      input_df = pd.DataFrame({
+        'city_enc': [city_enc],
+        'state_enc': [state_enc],
+        'pollutant_enc': [pollutant_enc],
+        'year': [year],
+        'month': [month]
 })
 
 # Prediction
@@ -40,7 +40,7 @@ input_df = pd.DataFrame({
 
     # Create DataFrame EXACTLY matching training
     # Ensure correct column order
-    input_df = input_df[['city_enc', 'state_enc', 'pollutant_enc', 'year', 'month', 'day']]
+       input_df = input_df[['city_enc', 'state_enc', 'pollutant_enc', 'year', 'month', 'day']]
 
     prediction = model.predict(input_df)
 
